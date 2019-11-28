@@ -1,0 +1,8 @@
+alias dcb='docker-compose -f docker-compose.yml -f docker-compose.dev.yml build'
+alias dcu='docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d'
+alias dcd='docker-compose down -v'
+alias dcp='docker-compose ps -a'
+alias dcmm='docker-compose run --rm --entrypoint "" srv python manage.py makemigrations'
+alias dcm='docker-compose run --rm --entrypoint "" srv python manage.py migrate'
+alias dct='docker-compose run --rm --no-deps --entrypoint "" srv pytest'
+alias dcrb='docker-compose -f docker-compose.yml -f docker-compose.dev.yml run --rm --no-deps --entrypoint "" srv bash'

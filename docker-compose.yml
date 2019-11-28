@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  srv:
+    build: .
+    image: 'voice_test_task'
+    env_file:
+      - '.env'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+
+  db:
+    image: 'postgres:11'
+    env_file:
+      - '.env'
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data/'
+
+volumes:
+  pgdata:
